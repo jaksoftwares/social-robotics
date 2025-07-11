@@ -10,7 +10,7 @@ export const news: NewsItem[] = [
   {
     title: "Arrival of the Pepper Robot in JKUAT",
     description:
-      "We are thrilled to announce the arrival of our very first Pepper robot at the JKUAT Social Robotics Lab! Pepper is a state-of-the-art humanoid robot developed by SoftBank Robotics, with advanced sensing capabilities in human-robot interaction. It can recognize faces, interpret emotions, and engage in conversations, making it an ideal platform for exploring the future of social robotics research. This addition to our lab will enable us advance our human robot interaction research, design innovations solutions, and deepen our understanding of human-centered robotics. We are excited to see the possibilities Pepper will bring to our ongoing projects and teaching!",
+      "We are thrilled to announce the arrival of our first Pepper robot at JKUAT Social Robotics Lab! This state-of-the-art humanoid robot by SoftBank Robotics features advanced sensing capabilities, face recognition, emotion interpretation, and conversational abilities. Pepper will enable us to advance human-robot interaction research, design innovative solutions, and deepen our understanding of human-centered robotics.",
     coverImage: "/img/News/pepper.jpg",
     externalLink: "",
     datePublished: "2024-08-10",
