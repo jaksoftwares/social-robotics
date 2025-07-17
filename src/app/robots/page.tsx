@@ -40,7 +40,7 @@ const RobotsPage = () => {
         <div className="container mx-auto max-w-7xl relative z-10">
           <div className="flex flex-col items-center text-center mb-12">
             <div className="flex items-center mb-6">
-              <p className="text-gray-600 mr-4">Meet Our Intelligent Team</p>
+              <p className="text-gray-600 mr-4">Our Robots</p>
               <div className="w-[150px] h-[2px] bg-custom-lintingGreenDark" />
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">

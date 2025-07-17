@@ -72,7 +72,7 @@ const Hero: React.FC = () => {
 
           {/* Image Section - comes first on mobile */}
           <div className="w-full md:w-1/2">
-            <div className="relative p-6 border-l-4 border-r-4 border-white rounded-2xl bg-gradient-to-br from-white/8 via-transparent to-white/8 backdrop-blur-sm shadow-2xl min-h-[700px] md:min-h-[600px]">
+            <div className="relative p-6 border-l-4 border-r-4 border-white rounded-2xl bg-gradient-to-br from-white/8 via-transparent to-white/8 backdrop-blur-sm shadow-2xl min-h-[300px] md:min-h-[600px]">
               {/* Incomplete top border - 3/4 width */}
               <div className="absolute top-0 left-0 w-3/4 h-1 bg-white rounded-l-2xl"></div>
               
