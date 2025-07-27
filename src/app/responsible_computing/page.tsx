@@ -3,7 +3,6 @@
 import { rccProjects } from "@/constants/rcc-projects";
 import { studentDesignedProjects } from "@/constants/student-designed-projects";
 import Image from "next/image";
-import Link from "next/link";
 import Banner from "@/components/Banner";
 
 export default function ResponsibleComputingPage() {
@@ -38,14 +37,14 @@ export default function ResponsibleComputingPage() {
             dangerouslySetInnerHTML={{ __html: project.short_description }}
           />
 
-          {project.title && (
+          {/* {project.title && (
             <Link
               href={project.title}
               className="text-blue-600 font-semibold hover:text-blue-800 transition-all duration-300"
             >
               Learn More »
             </Link>
-          )}
+          )} */}
         </div>
 
         {/* Image */}
@@ -87,14 +86,14 @@ export default function ResponsibleComputingPage() {
                     ? project.short_description
                     : "No description available."}
                 </p>
-                {project.title && (
+                {/* {project.title && (
                   <Link
                     href={project.title}
                     className="text-blue-600 font-semibold hover:text-blue-800 transition-all duration-300"
                   >
                     Learn More »
                   </Link>
-                )}
+                )} */}
               </div>
 
               {/* Image */}
