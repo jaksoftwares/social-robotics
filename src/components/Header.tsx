@@ -43,12 +43,7 @@ const Header = () => {
     { name: "Responsible Computing", path: "/responsible_computing/" },
     { name: "Publications", path: "publications" },
     { name: "Robots", path: "/robots/" },
-<<<<<<< Updated upstream
-    { name: "Contact", path: "/contact/" },
-    { name: "Blogs", path: "/blogs/" }, // Added Blogs link
-=======
     { name: "Blogs", path: "/blogs/" },
->>>>>>> Stashed changes
   ];
 
   return (

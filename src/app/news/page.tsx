@@ -168,6 +168,19 @@ export default function NewsPage() {
             </div>
           )}
 
+          {/* Past Events Section (when not filtered) */}
+          {!selectedCategory && pastEvents.length > 0 && (
+            <div className="mb-12">
+              <h3 className="text-xl font-raleway font-bold text-gray-900 mb-6">Past Events</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {pastEvents.map((event) => (
+                  <NewsCard key={event.id} news={event} eventTag="Past" />
+                ))}
+              </div>
+            </div>
+          )}
+
+
           {/* Main Section */}
           <h3 className="text-xl font-raleway font-bold text-gray-900 mb-6">
             {selectedCategory 

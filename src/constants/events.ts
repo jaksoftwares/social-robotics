@@ -16,13 +16,8 @@ export const recentEvents = [
     title: "Mozilla Responsible Computing Challenge (RCC) Global Conference ",
     description:
       "Dr. Eunice participated in the inaugural Mozilla Responsible Computing Challenge (RCC) Global Conference held in Kottayam, India supported by the Mozilla Foundation and USAID. The Conference brought together academicians and researchers from Kenya, India, and the United States who are advancing responsible computing initiatives. This event facilitated interdisciplinary discussions across diverse disciplines and countries, fostering insightful conversations on the future and direction of responsible computing.",
-<<<<<<< Updated upstream
-    coverImage: "/img/News/Mozilla.jpg",
-    location: "Kerala, India",
-=======
     coverImage: "/img/news/mozilla-rcc.jpg",
       location: "Kerala, India",
->>>>>>> Stashed changes
     externalLink:
       "https://foundation.mozilla.org/en/blog/responsible-computing-for-sustainable-futures/",
     dateStarting: "2024-10-21",
