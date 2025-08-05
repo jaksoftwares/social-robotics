@@ -1,17 +1,23 @@
 // components/Banner.tsx
-import React from "react";
 
 type BannerProps = {
   title: string;
+  subtitle?: string; // ✅ allow optional subtitle
 };
 
-const Banner: React.FC<BannerProps> = ({ title }) => {
+const Banner: React.FC<BannerProps> = ({ title, subtitle }) => {
   return (
-    <div className="bg-custom-lintingGreenDark p-5">
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-        <h1 className="text-white font-bold text-2xl sm:text-3xl md:text-3xl lg:text-3xl text-center sm:text-left mt-4 mb-4 px-4">
-          {title}
-        </h1>
+    <div className="bg-custom-lintingGreenDark p-6">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+        <div>
+          <h1 className="text-white font-bold text-2xl sm:text-3xl">{title}</h1>
+
+          {subtitle && (
+            <p className="text-white text-sm sm:text-base mt-1 max-w-4xl">
+              {subtitle}
+            </p>
+          )}
+        </div>
       </div>
     </div>
   );

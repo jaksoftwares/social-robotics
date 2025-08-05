@@ -162,76 +162,36 @@ export const people: Person[] = [
   bio: "A passionate, highly motivated and skilled professional with a passion for designing, developing, and implementing innovative software solutions.",
   category: "P"
 },
-  {
-    first_name: "Daniel",
-    last_name: "Karume",
-    slug: "daniel-karume",
-    degree: "Bsc. Computer Science",
-    profile_picture: "/img/people/undergraduate/daniel-karume.jpeg",
-    linked_in_link: "https://www.linkedin.com/in/daniel-karume/",
-    category: "U"
+ {
+    "title": "",
+    "first_name": "James",
+    "last_name": "Museti",
+    "slug": "james-museti",
+    "specialty": "BSc. Computer Science – Intern",
+    "profile_picture": "/img/people/undergraduate/james-moseti.jpg",
+    "degree": "",
+    "pursuing": "Internship at JKUAT Social Robotics Lab",
+    "focus_title": "FGM and Early Marriage Awareness via Robotics",
+    "focus_short": "Using NAO and Pepper to create multilingual, educational conversations on FGM and early marriages.",
+    "focus_long": "James is contributing to a project focused on developing a conversational humanoid robot using NAO and Pepper. The goal is to spread awareness and provide accurate, culturally aware information on Female Genital Mutilation (FGM) and early marriages in the Kenyan context. His work involves enabling the robots to engage in respectful, AI-powered dialogue in English and Kiswahili, and support public outreach through social media.",
+    "quote": "Supporting awareness through intelligent and inclusive conversations.",
+    "bio": "At the Social Robotics Lab, James focuses on enhancing socially assistive robots using Large Language Models (LLMs) and Vision-Language Models (VLMs). His aim is to improve how robots engage in meaningful educational conversations by combining language processing with visual understanding. He is passionate about building human-centered AI systems for better interaction and learning.",
+    "category": "U"
   },
   {
-    first_name: "Peaches",
-    last_name: "Njenga",
-    slug: "peaches-njenga",
-    degree: "Bsc. Computer Science",
-    profile_picture: "/img/people/undergraduate/peaches-njenga.jpeg",
-    linked_in_link: "https://www.linkedin.com/in/peaches-njenga-261073208/",
-    category: "U"
-  },
-  {
-    first_name: "James",
-    last_name: "Mwaura",
-    slug: "james-mwaura",
-    degree: "Bsc. Computer Science",
-    profile_picture: "/img/people/undergraduate/james-mwaura.jpeg",
-    linked_in_link: "https://www.linkedin.com/in/james-mwaura-616996251/",
-    category: "U"
-  },
-  {
-    first_name: "Joel",
-    last_name: "Kimani",
-    slug: "joel-kimani",
-    degree: "Bsc. Computer Science",
-    profile_picture: "/img/people/undergraduate/joel-kimani.jpeg",
-    linked_in_link: "https://www.linkedin.com/in/joelkimani12/",
-    category: "U"
-  },
-  {
-    first_name: "Alex",
-    last_name: "Ombaba",
-    slug: "alex-ombaba",
-    degree: "Bsc. Computer Science",
-    profile_picture: "/img/people/undergraduate/alex-ombaba.jpeg",
-    linked_in_link: "https://www.linkedin.com/in/alex-ombaba-9b7b27209/",
-    category: "U"
-  },
-  {
-    first_name: "Francis",
-    last_name: "Omari",
-    slug: "francis-omari",
-    degree: "Bsc. Computer Science",
-    profile_picture: "/img/people/undergraduate/francis-omari.jpeg",
-    linked_in_link: "https://www.linkedin.com/in/francis-omari-7500a7161/",
-    category: "U"
-  },
-  {
-    first_name: "Brian",
-    last_name: "Kiprono",
-    slug: "brian-kiprono",
-    degree: "Bsc. Computer Science",
-    profile_picture: "/img/people/undergraduate/brian-kiprono.jpeg",
-    linked_in_link: "https://www.linkedin.com/in/brian-kiprono-00715b197/",
-    category: "U"
-  },
-  {
-    first_name: "Loice",
-    last_name: "Nzioka",
-    slug: "loice-nzioka",
-    degree: "Bsc. Computer Science",
-    profile_picture: "/img/people/undergraduate/loice-nzioka.jpeg",
-    linked_in_link: "https://www.linkedin.com/in/loice-nzioka-116b9121a/",
-    category: "U"
+    "title": "",
+    "first_name": "Moses",
+    "last_name": "Muiruri",
+    "slug": "moses-muiruri",
+    "specialty": "BSc. Computer Science – Intern",
+    "profile_picture": "/img/people/undergraduate/moses-muiruri.jpg",
+    "degree": "",
+    "pursuing": "Internship at JKUAT Social Robotics Lab",
+    "focus_title": "FGM and Early Marriage Awareness via Robotics",
+    "focus_short": "Using NAO and Pepper to create multilingual, educational conversations on FGM and early marriages.",
+    "focus_long": "Moses is contributing to a project focused on developing a conversational humanoid robot using NAO and Pepper. The goal is to spread awareness and provide accurate, culturally aware information on Female Genital Mutilation (FGM) and early marriages in the Kenyan context. His work involves enabling the robots to engage in respectful, AI-powered dialogue in English and Kiswahili, and support public outreach through social media.",
+    "quote": "Supporting awareness through intelligent and inclusive conversations.",
+    "bio": "Moses is an innovative full stack software engineer specializing in IoT, robotics, and smart systems. At the Social Robotics Lab, he is applying his skills to build interactive, socially aware robots that inform and support communities. With a strong focus on real-world impact, he’s committed to using technology to address societal challenges.",
+    "category": "U"
   }
 ];

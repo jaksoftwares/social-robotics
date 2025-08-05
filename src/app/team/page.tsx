@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { people, Person } from "@/constants/people";
 import Banner from "@/components/Banner";
+import { ReadMoreText } from "@/components/ReadMore";
 
 function slugify(name: string) {
   return name
@@ -21,12 +22,14 @@ export default function TeamPage() {
   const prof = people.find((p) => p.category === "S"); // Supervisor/Prof
   const admin = people.find((p) => p.category === "A"); // Admin
   const postgraduates = people.filter((p) => p.category === "P");
+  const undergraduates = people.filter((p) => p.category === "U");
 
   // Create slug fallback for linking (since Person has no slug)
   const makeSlug = (person: Person) =>
     slugify(`${person.first_name} ${person.last_name}`);
 
   return (
+<<<<<<< Updated upstream
     <main className="relative min-h-screen overflow-x-hidden" style={{ marginBottom: '-150px', paddingBottom: '150px' }}>
       {/* Background Effects (match About/Home) */}
       <div className="absolute inset-0 -z-10">
@@ -84,11 +87,34 @@ export default function TeamPage() {
                 style={{ objectFit: "cover" }}
                 priorit
                   className="transition-transform duration-500 group-hover:scale-110"
+=======
+    <main>
+      <Banner title="Our Team" />
+      {/* Team Introduction */}
+      <div className="container mx-auto font-lato px-4 py-8"> 
+        {/* Principal Investigator */}
+        {principalInvestigator && (
+          <>
+            <h2 className="mt-4 md:mt-8 text-xl md:text-3xl font-raleway text-gray-800 font-bold">
+              PRINCIPAL INVESTIGATOR
+            </h2>
+            <div className="border my-4"></div>
+            <div className="my-8 md:my-16 flex flex-col md:flex-row items-center gap-6 md:gap-10 justify-center">
+              <div className="relative w-48 h-48 md:w-64 md:h-64 flex-shrink-0 rounded-full overflow-hidden">
+                <Image
+                  src={getProfilePicture(principalInvestigator)}
+                  alt={`${principalInvestigator.first_name} ${principalInvestigator.last_name}`}
+                  fill
+                  sizes="(min-width: 768px) 256px, 192px"
+                  style={{ objectFit: "cover" }}
+                  priority
+>>>>>>> Stashed changes
                 />
               </div>
               <div className="flex flex-col gap-4 md:gap-5 w-full md:w-2/3">
                 <div>
                   <h2 className="font-semibold text-xl md:text-2xl lg:text-3xl">
+<<<<<<< Updated upstream
                     {(principalInvestigator.title ?? "")} {principalInvestigator.first_name} {principalInvestigator.last_name}
                   </h2>
                 </div>
@@ -96,10 +122,21 @@ export default function TeamPage() {
                   <p
                     className="text-gray-600 text-justify break-words"
                     dangerouslySetInnerHTML={{ __html: principalInvestigator.focus_long || "" }}
+=======
+                    {(principalInvestigator.title ?? "")}{" "}
+                    {principalInvestigator.first_name} {principalInvestigator.last_name}
+                  </h2>
+                </div>
+                <div>
+                  <ReadMoreText 
+                    text={principalInvestigator.focus_long || ""}
+                    className="text-gray-600 text-lg text-justify leading-relaxed mb-6"
+>>>>>>> Stashed changes
                   />
                 </div>
                 <Link
                   href={`/team/${makeSlug(principalInvestigator)}`}
+<<<<<<< Updated upstream
                   className="relative inline-flex items-center px-3 py-2 text-sm font-semibold rounded-md transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg group overflow-hidden
                     bg-customCyanBlue text-white border-2 border-customCyanBlue 
                     hover:bg-white hover:text-customCyanBlue hover:border-customCyanBlue min-w-0 w-auto max-w-[140px]"
@@ -115,12 +152,19 @@ export default function TeamPage() {
                   <div className="absolute -top-1 -right-1 w-1.5 h-1.5 bg-white rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity duration-300"></div>
                   <div className="absolute -bottom-1 -left-1 w-1 h-1 bg-customCyanBlue rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-300"></div>
                   <div className="absolute top-1/2 -right-2 w-0.5 h-0.5 bg-white rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-opacity duration-300"></div>
+=======
+                  className="p-2 w-fit bg-custom-lintingGreenDark text-white border-2 rounded-lg hover:bg-transparent hover:border-custom-lintingGreenDark hover:text-custom-lintingGreenDark transition duration-300 inline-flex items-center gap-2"
+                >
+                  <span className="text-xl">View Profile</span>
+                  <i className="fa-solid fa-arrow-right-long" />
+>>>>>>> Stashed changes
                 </Link>
               </div>
             </div>
             <div className="border my-8"></div>
           </>
         )}
+<<<<<<< Updated upstream
         {/* Professor */}
         {prof && (
           <>
@@ -145,6 +189,23 @@ export default function TeamPage() {
                   className="transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
+=======
+
+        {/* Professor */}
+        {prof && (
+          <>
+            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10 justify-center">
+              <div className="relative w-48 h-48 md:w-64 md:h-64 flex-shrink-0 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center">
+                <Image
+                  src={getProfilePicture(prof)}
+                  alt={`${prof.first_name} ${prof.last_name}`}
+                  fill
+                  sizes="(min-width: 768px) 256px, 192px"
+                  style={{ objectFit: "cover" }}
+                  priority
+                />
+              </div>
+>>>>>>> Stashed changes
               <div className="flex flex-col gap-4 md:gap-5 w-full md:w-2/3">
                 <div>
                   <h2 className="font-semibold text-xl md:text-2xl lg:text-3xl">
@@ -156,6 +217,7 @@ export default function TeamPage() {
                 </div>
                 <div>
                   <h4 className="italic text-lg md:text-xl">Specialization</h4>
+<<<<<<< Updated upstream
                   <p className="text-gray-600 text-justify break-words">{prof.focus_long}</p>
                 </div>
                 <Link
@@ -175,12 +237,26 @@ export default function TeamPage() {
                   <div className="absolute -top-1 -right-1 w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity duration-300"></div>
                   <div className="absolute -bottom-1 -left-1 w-1.5 h-1.5 bg-customCyanBlue rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-300"></div>
                   <div className="absolute top-1/2 -right-2 w-1 h-1 bg-white rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-opacity duration-300"></div>
+=======
+                  <ReadMoreText 
+                    text={prof.focus_long || ""}
+                    className="text-gray-600 text-lg text-justify leading-relaxed mb-6"
+                  />
+                </div>
+                <Link
+                  href={`/team/${makeSlug(prof)}`}
+                  className="p-2 w-fit bg-custom-lintingGreenDark text-white border-2 rounded-lg hover:bg-transparent hover:border-custom-lintingGreenDark hover:text-custom-lintingGreenDark transition duration-300 inline-flex items-center gap-2"
+                >
+                  <span className="text-xl">View Profile</span>
+                  <i className="fa-solid fa-arrow-right-long" />
+>>>>>>> Stashed changes
                 </Link>
               </div>
             </div>
             <div className="border my-8"></div>
           </>
         )}
+<<<<<<< Updated upstream
         {/* Admin */}
         {admin && (
           <>
@@ -251,6 +327,58 @@ export default function TeamPage() {
             <div className="w-[120px] h-[2px] bg-customCyanBlue ml-4"></div>
           </div>
         </div>
+=======
+
+        {/* Admin */}
+        {admin && (
+          <>
+            <div className="my-8 md:my-16 flex flex-col md:flex-row items-center gap-6 md:gap-10 justify-center">
+              <div className="relative w-48 h-48 md:w-64 md:h-64 flex-shrink-0 rounded-full overflow-hidden">
+                <Image
+                  src={getProfilePicture(admin)}
+                  alt={`${admin.first_name} ${admin.last_name}`}
+                  fill
+                  sizes="(min-width: 768px) 256px, 192px"
+                  style={{ objectFit: "cover" }}
+                  priority
+                />
+              </div>
+              <div className="flex flex-col gap-4 md:gap-5 w-full md:w-2/3">
+                <div>
+                  <h2 className="font-semibold text-xl md:text-2xl lg:text-3xl">
+                    {admin.first_name} {admin.last_name}
+                  </h2>
+                  {admin.specialty && (
+                    <h4 className="text-custom-red text-lg md:text-xl">{admin.specialty}</h4>
+                  )}
+                </div>
+                <div>
+                  <h4 className="italic text-lg md:text-xl">Specialization</h4>
+                  <ReadMoreText 
+                    text={admin.focus_long || ""}
+                    className="text-gray-600 text-lg text-justify leading-relaxed mb-6"
+                  />
+                </div>
+                <Link
+                  href={`/team/${makeSlug(admin)}`}
+                  className="p-2 w-fit bg-custom-lintingGreenDark text-white border-2 rounded-lg hover:bg-transparent hover:border-custom-lintingGreenDark hover:text-custom-lintingGreenDark transition duration-300 inline-flex items-center gap-2"
+                >
+                  <span className="text-xl">View Profile</span>
+                  <i className="fa-solid fa-arrow-right-long" />
+                </Link>
+              </div>
+            </div>
+            <div className="border"></div>
+          </>
+        )}
+
+        {/* Postgraduate Students */}
+        <h2 className="mt-4 md:mt-8 text-xl md:text-3xl font-raleway text-gray-800 font-bold">
+          POSTGRADUATE STUDENTS
+        </h2>
+        <div className="border border-black mb-4"></div>
+
+>>>>>>> Stashed changes
         {postgraduates.map((postgrad, i) => (
           <React.Fragment key={`${postgrad.first_name}-${postgrad.last_name}`}>
             <div
@@ -269,6 +397,7 @@ export default function TeamPage() {
                 </div>
                 <div>
                   <h4 className="italic text-lg md:text-xl">Specialization</h4>
+<<<<<<< Updated upstream
                   <p className="text-gray-600 text-justify break-words">{postgrad.focus_long}</p>
                 </div>
                 <Link
@@ -291,6 +420,22 @@ export default function TeamPage() {
                 </Link>
               </div>
               <div className="relative w-48 h-48 md:w-64 md:h-64 flex-shrink-0 rounded-full overflow-hidden shadow-2xl border-4 border-customCyanBlue/20 group">
+=======
+                  <ReadMoreText 
+                    text={postgrad.focus_long || ""}
+                    className="text-gray-600 text-lg text-justify leading-relaxed mb-6"
+                  />
+                </div>
+                <Link
+                  href={`/team/${makeSlug(postgrad)}`}
+                  className="p-2 w-fit bg-custom-lintingGreenDark text-white border-2 rounded-lg hover:bg-transparent hover:border-custom-lintingGreenDark hover:text-custom-lintingGreenDark transition duration-300 inline-flex items-center gap-2"
+                >
+                  <span className="text-xl">View Profile</span>
+                  <i className="fa-solid fa-arrow-right-long" />
+                </Link>
+              </div>
+              <div className="relative w-48 h-48 md:w-64 md:h-64 flex-shrink-0 rounded-full overflow-hidden">
+>>>>>>> Stashed changes
                 <Image
                   src={getProfilePicture(postgrad)}
                   alt={`${postgrad.first_name} ${postgrad.last_name}`}
@@ -298,12 +443,76 @@ export default function TeamPage() {
                   sizes="(min-width: 768px) 256px, 192px"
                   style={{ objectFit: "cover" }}
                   priority={i < 3}
+<<<<<<< Updated upstream
                   className="transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
             </div>
             {i !== postgraduates.length - 1 && (
               <div className="border my-8 md:my-16"></div>
+=======
+                />
+              </div>
+            </div>
+            
+            {i !== postgraduates.length - 1 && (
+              <div className="border border-black my-8 md:my-16"></div>
+            )}
+          </React.Fragment>
+        ))}
+
+        {/* Undergraduate Students */}
+        <h2 className="mt-4 md:mt-8 text-xl md:text-3xl font-raleway text-gray-800 font-bold">
+          UNDERGRADUATE STUDENTS
+        </h2>
+        <div className="border border-black mb-4"></div>
+
+        {undergraduates.map((student, i) => (
+          <React.Fragment key={`${student.first_name}-${student.last_name}`}>
+            <div
+              className={`my-8 md:my-16 flex flex-col md:flex-row items-center gap-6 md:gap-10 justify-center ${
+                (i + 1) % 2 === 0 ? "md:flex-row-reverse" : ""
+              }`}
+            >
+              <div className="flex flex-col gap-4 md:gap-5 w-full md:w-2/3">
+                <div>
+                  <h2 className="font-semibold text-xl md:text-2xl lg:text-3xl">
+                    {student.first_name} {student.last_name}
+                  </h2>
+                  {student.specialty && (
+                    <h4 className="text-custom-red text-lg md:text-xl">{student.specialty}</h4>
+                  )}
+                </div>
+                <div>
+                  <h4 className="italic text-lg md:text-xl">Focus Area</h4>
+                  <ReadMoreText 
+                    text={student.focus_long || ""}
+                    className="text-gray-600 text-lg text-justify leading-relaxed mb-6"
+                  />
+                </div>
+                <Link
+                  href={`/team/${makeSlug(student)}`}
+                  className="p-2 w-fit bg-custom-lintingGreenDark text-white border-2 rounded-lg hover:bg-transparent hover:border-custom-lintingGreenDark hover:text-custom-lintingGreenDark transition duration-300 inline-flex items-center gap-2"
+                >
+                  <span className="text-xl">View Profile</span>
+                  <i className="fa-solid fa-arrow-right-long" />
+                </Link>
+              </div>
+              <div className="relative w-48 h-48 md:w-64 md:h-64 flex-shrink-0 rounded-full overflow-hidden">
+                <Image
+                  src={getProfilePicture(student)}
+                  alt={`${student.first_name} ${student.last_name}`}
+                  fill
+                  sizes="(min-width: 768px) 256px, 192px"
+                  style={{ objectFit: "cover" }}
+                  priority={i < 3}
+                />
+              </div>
+            </div>
+
+            {i !== undergraduates.length - 1 && (
+              <div className="border border-black my-8 md:my-16"></div>
+>>>>>>> Stashed changes
             )}
           </React.Fragment>
         ))}
