@@ -1,4 +1,17 @@
-export const blogs = [
+export interface Blog {
+  slug: string;
+  title: string;
+  summary: string;
+  image: string;
+  author: string;
+  date: string;
+  readTime: number;
+  category: string;
+  content: string[];
+}
+
+
+export const blogs: Blog[] = [
   {
   "slug": "humanoid-robots-llm-integration",
   "title": "Integrating Large Language Models with Humanoid Robots: A JKUAT Social Robotics Lab Internship Experience",

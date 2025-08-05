@@ -8,7 +8,7 @@ import Image from "next/image";
 
 
 export default async function BlogDetailsPage({ params }: { params: { slug: string } }) {
-    // ⬇ Explicitly await `params` in case it's a Promise
+  
   const resolvedParams = await Promise.resolve(params);
   const { slug } = resolvedParams;
 
