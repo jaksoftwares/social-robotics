@@ -3,14 +3,12 @@ import { blogs } from "../blogData";
 import Link from "next/link";
 import Image from "next/image";
 
-interface BlogPageProps {
-  params: { slug: string };
-}
 
 
 
-export default async function BlogDetailsPage({ params }: BlogPageProps) {
-  // ⬇ Explicitly await `params` in case it's a Promise
+
+export default async function BlogDetailsPage({ params }: { params: { slug: string } }) {
+    // ⬇ Explicitly await `params` in case it's a Promise
   const resolvedParams = await Promise.resolve(params);
   const { slug } = resolvedParams;
 
