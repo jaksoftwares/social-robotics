@@ -10,12 +10,15 @@ export function generateStaticParams() {
   return blogs.map(blog => ({ slug: blog.slug }));
 }
 
-export default function BlogDetailsPage({ params }: { params: { slug: string } }) {
+export default function BlogDetailsPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const { slug } = params;
   const blog = blogs.find((b) => b.slug === slug);
 
   if (!blog) return notFound();
-
 
   return (
     <div className="bg-gray-50">
