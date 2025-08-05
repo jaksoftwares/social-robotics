@@ -32,20 +32,29 @@ export default function NewsPage() {
   }, []);
 
   const filteredNews = newsData.filter((news) => {
-    const matchesCategory = selectedCategory ? news.category === selectedCategory : true;
-    const matchesSearch = searchTerm
-      ? news.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        news.description.toLowerCase().includes(searchTerm.toLowerCase())
-      : true;
+  const matchesCategory = selectedCategory ? news.category === selectedCategory : true;
+  const matchesSearch = searchTerm
+    ? news.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      news.description.toLowerCase().includes(searchTerm.toLowerCase())
+    : true;
 
-    // Events filtering
-    if (selectedCategory === "Events") {
-      const isPast = new Date(news.datePublished) <= new Date();
-      return showPastEvents ? isPast && matchesSearch : !isPast && matchesSearch;
-    }
+  const isEvent = news.category === "Events";
+  const isPast = new Date(news.datePublished) <= new Date();
+  const isUpcoming = new Date(news.datePublished) > new Date();
 
-    return matchesCategory && matchesSearch;
-  });
+  // Events filtering when "Events" tab is selected
+  if (selectedCategory === "Events") {
+    return showPastEvents
+      ? isEvent && isPast && matchesSearch
+      : isEvent && isUpcoming && matchesSearch;
+  }
+
+  // For "All News", exclude events that are already shown elsewhere
+  if (!selectedCategory && isEvent) return false;
+
+  return matchesCategory && matchesSearch;
+});
+
 
   return (
     <div className="bg-gray-50">
