@@ -27,18 +27,8 @@ const EventCarousel: React.FC<{ title: string; events: Event[]; navId: string }>
   return (
     <>
       <div className="text-center mb-12">
-<<<<<<< Updated upstream
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-raleway font-bold tracking-wide" style={{ color: '#1f2937' }}>
-          {title.split(' ').map((word, index) => (
-            <span key={index} style={{ color: index === 1 ? undefined : '#1f2937' }}>
-              {index === 1 ? <span className="text-customLintingGreenDark">{word}</span> : word}
-              {index < title.split(' ').length - 1 ? ' ' : ''}
-            </span>
-          ))}
-=======
         <h2 className="text-2xl md:text-3xl font-raleway text-gray-800 mb-4 font-bold">
           {title}
->>>>>>> Stashed changes
         </h2>
         <div className="w-24 h-1 bg-gradient-to-r from-customLintingGreenDark to-gray-600 mx-auto rounded-full mt-4"></div>
       </div>
@@ -94,19 +84,11 @@ const EventCarousel: React.FC<{ title: string; events: Event[]; navId: string }>
                     
                     <div className="flex items-center gap-2 text-gray-600">
                       <i className="fa fa-map-marker-alt text-sm flex-shrink-0"></i>
-<<<<<<< Updated upstream
-                      <span className="text-sm md:text-base line-clamp-1">{event.location}</span>
-                    </div>
-                  </div>
-                  
-                  <p className="text-gray-700 text-sm md:text-base font-inter leading-relaxed mb-6 flex-1 line-clamp-4">
-=======
                       <span className="text-gray-600 text-lg text-justify leading-relaxed">{event.location}</span>
                     </div>
                   </div>
                   
                   <p className="line-clamp-4 text-gray-600 text-lg text-justify leading-relaxed mb-6">
->>>>>>> Stashed changes
                     {event.description}
                   </p>
                   

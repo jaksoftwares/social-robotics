@@ -34,21 +34,12 @@ const NewsSection: React.FC = () => {
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Enhanced header section */}
         <div className="text-center mb-8">
-<<<<<<< Updated upstream
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-raleway font-bold text-gray-900 tracking-wide mb-3">
-            LATEST <span className="text-customLintingGreenDark">NEWS</span>
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-customLintingGreenDark to-gray-600 mx-auto rounded-full"></div>
-          <p className="text-gray-600 mt-4 text-base font-inter max-w-2xl mx-auto">
-            Stay updated with the latest developments, achievements, and breakthroughs from our Social Robotics Lab
-=======
           <h2 className="text-xl md:text-3xl font-raleway text-gray-800 font-bold">
             LATEST NEWS
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-customLintingGreenDark to-gray-600 mx-auto rounded-full"></div>
           <p className="text-gray-600 text-lg text-justify leading-relaxed mb-6 mx-auto max-w-2xl">
             Stay updated with the latest developments and achievements
->>>>>>> Stashed changes
           </p>
         </div>
 
@@ -86,11 +77,7 @@ const NewsSection: React.FC = () => {
                 </div>
                 
                 {/* Enhanced description */}
-<<<<<<< Updated upstream
-                <p className="text-gray-700 text-sm font-inter leading-relaxed mb-6 flex-1 line-clamp-3">
-=======
                 <p className="text-gray-600 text-lg text-justify leading-relaxed  line-clamp-3">
->>>>>>> Stashed changes
                   {item.description}
                 </p>
                 
