@@ -4,21 +4,23 @@ import Link from "next/link";
 import Image from "next/image";
 
 
+interface PageProps {
+  params: {
+    slug: string;
+  };
+}
 
-
-export function generateStaticParams() {
+export function generateStaticParams(): Array<{ slug: string }> {
   return blogs.map(blog => ({ slug: blog.slug }));
 }
 
-export default function BlogDetailsPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+
+
+export default function BlogDetailsPage({ params }: PageProps) {
   const { slug } = params;
   const blog = blogs.find((b) => b.slug === slug);
 
-  if (!blog) return notFound();
+  if (!blog) return notFound()
 
   return (
     <div className="bg-gray-50">
