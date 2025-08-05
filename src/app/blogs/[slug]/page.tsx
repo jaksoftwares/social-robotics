@@ -4,17 +4,17 @@ import Link from "next/link";
 import Image from "next/image";
 
 
+interface BlogDetailsPageProps {
+  params: {
+    slug: string;
+  };
+}
 
-
-
-export default async function BlogDetailsPage({ params }: { params: { slug: string } }) {
-  
-  const resolvedParams = await Promise.resolve(params);
-  const { slug } = resolvedParams;
-
+export default function BlogDetailsPage({ params }: BlogDetailsPageProps) {
+  const { slug } = params;
   const blog = blogs.find((b) => b.slug === slug);
 
-  if (!blog) return notFound();;
+  if (!blog) return notFound();
 
   return (
     <div className="bg-gray-50">
