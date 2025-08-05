@@ -7,10 +7,16 @@ interface BlogPageProps {
   params: { slug: string };
 }
 
-export default function BlogDetailsPage({ params }: BlogPageProps) {
-  const blog = blogs.find((b) => b.slug === params.slug);
 
-  if (!blog) return notFound();
+
+export default async function BlogDetailsPage({ params }: BlogPageProps) {
+  // ⬇ Explicitly await `params` in case it's a Promise
+  const resolvedParams = await Promise.resolve(params);
+  const { slug } = resolvedParams;
+
+  const blog = blogs.find((b) => b.slug === slug);
+
+  if (!blog) return notFound();;
 
   return (
     <div className="bg-gray-50">
