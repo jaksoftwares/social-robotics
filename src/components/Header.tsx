@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
@@ -41,7 +41,7 @@ const Header = () => {
     { name: "Team", path: "/team/" },
     { name: "Projects", path: "/projects/" },
     { name: "Responsible Computing", path: "/responsible_computing/" },
-    { name: "Publications", path: "publications" },
+    { name: "Publications", path: "/publications" },
     { name: "Robots", path: "/robots/" },
     { name: "Blogs", path: "/blogs/" },
   ];
@@ -189,29 +189,53 @@ const Header = () => {
 
         {/* Navbar Links */}
         <div className="p-2 relative">
-        <ul
-          className={`${
-            isMobileMenuOpen
-              ? "flex flex-col items-start gap-4 px-4" // Left-aligned on mobile
-              : "hidden"
-          } md:flex md:items-center md:justify-center gap-6 md:gap-12 text-white duration-300 absolute top-0 left-0 right-0 bg-customLintingGreenDark md:relative md:bg-transparent z-10`}
-          onClick={(e) => e.stopPropagation()}
-        >
-          {navItems.map((item) => (
-            <li key={item.path}>
-              <Link
-                href={item.path}
-                className={`relative inline-block pb-1 text-lg transition-transform transform hover:-translate-y-1 ${
-                  pathname.replace(/\/$/, "") === item.path.replace(/\/$/, "") ? "text-red-500" : "text-white"
-                } after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-red-500 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300`}
-              >
-                {item.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+          <ul
+            className={`${
+              isMobileMenuOpen
+                ? "flex flex-col items-start gap-4 px-4 pb-4"
+                : "hidden"
+            } md:flex md:items-center md:justify-center gap-6 md:gap-12 text-white duration-300 absolute top-0 left-0 right-0 bg-customLintingGreenDark md:relative md:bg-transparent z-10`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {navItems.map((item) => (
+              <li key={item.path}>
+                <Link
+                  href={item.path}
+                  className={`relative inline-block pb-1 text-lg transition-transform transform hover:-translate-y-1 ${
+                    pathname.replace(/\/$/, "") === item.path.replace(/\/$/, "")
+                      ? "text-red-500"
+                      : "text-white"
+                  } after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-red-500 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300`}
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
 
+            {/* Contact Button - Desktop & Mobile */}
+            {/* <li>
+            <Link
+              href="/contact"
+              className="
+                bg-customLintingGreenDark md:bg-custom-lintingGreenDark
+                hover:bg-customLintingGreenDark/90 md:hover:bg-custom-lintingGreenDark/90
+                text-white px-4 py-2 rounded-lg transition-colors duration-300 flex items-center gap-2
+              "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+              </svg>
+              Contact Us
+            </Link>
+          </li> */}
+
+          </ul>
+        </div>
       </nav>
     </header>
   );
