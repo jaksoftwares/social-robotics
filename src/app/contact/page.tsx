@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Banner from '@/components/Banner';
 import { FaTwitter, FaLinkedin, FaYoutube, FaGithub } from 'react-icons/fa';
+import { NextSeo } from 'next-seo';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -40,6 +41,32 @@ export default function ContactPage() {
   };
 
   return (
+
+    <>
+    <NextSeo
+        title="Contact Us – JKUAT Social Robotics Lab"
+        description="Reach out to the Social Robotics Lab at JKUAT for research collaborations, media inquiries, student opportunities, and more."
+        canonical="https://www.jkuatsocialroboticslab.com/contact"
+        openGraph={{
+          url: "https://www.jkuatsocialroboticslab.com/contact",
+          title: "Contact Us – JKUAT Social Robotics Lab",
+          description:
+            "Reach out to the Social Robotics Lab at JKUAT for research collaborations, media inquiries, student opportunities, and more.",
+          siteName: "JKUAT Social Robotics Lab",
+          images: [
+            {
+              url: "https://www.jkuatsocialroboticslab.com/og-image.png",
+              width: 1200,
+              height: 630,
+              alt: "JKUAT Social Robotics Lab",
+            },
+          ],
+        }}
+        twitter={{
+          cardType: "summary_large_image",
+          site: "@JKUATRobotics",
+        }}
+      />
     <div className="bg-gray-50">
       <Banner
         title="Get In Touch"
@@ -355,5 +382,7 @@ export default function ContactPage() {
         </div>
       </section>
     </div>
+  </>
+
   );
 };

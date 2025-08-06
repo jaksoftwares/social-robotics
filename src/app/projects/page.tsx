@@ -6,6 +6,7 @@ import Banner from '@/components/Banner';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
+import { NextSeo } from 'next-seo';
 
 // Extract unique categories from the project list
 const categories = Array.from(
@@ -37,6 +38,33 @@ export default function ProjectsPage() {
   });
 
   return (
+       <>
+     <NextSeo
+        title="Projects – JKUAT Social Robotics Lab"
+        description="Browse innovative student and faculty-led social robotics research projects at JKUAT, focused on AI, responsible computing, and human-centered design."
+        canonical="https://www.jkuatsocialroboticslab.com/projects"
+        openGraph={{
+          url: 'https://www.jkuatsocialroboticslab.com/projects',
+          title: 'Projects – JKUAT Social Robotics Lab',
+          description:
+            'Browse innovative student and faculty-led social robotics research projects at JKUAT, focused on AI, responsible computing, and human-centered design.',
+          siteName: 'JKUAT Social Robotics Lab',
+          images: [
+            {
+              url: 'https://www.jkuatsocialroboticslab.com/og-image.png',
+              width: 1200,
+              height: 630,
+              alt: 'Social Robotics Projects',
+            },
+          ],
+        }}
+        twitter={{
+          cardType: 'summary_large_image',
+          site: '@JKUATRobotics',
+        }}
+      />
+
+     
     <div className="bg-gray-50">
       <Banner 
         title="Our Projects" 
@@ -200,5 +228,8 @@ export default function ProjectsPage() {
         </div>
       </section>
     </div>
+
+  </>
+
   );
 }

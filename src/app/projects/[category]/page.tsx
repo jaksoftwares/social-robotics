@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { NextSeo } from 'next-seo';
 
 export default function CategoryPage({ params }: { params: Promise<{ category: string }> }) {
   const [category, setCategory] = useState<string>('');
@@ -59,6 +60,29 @@ export default function CategoryPage({ params }: { params: Promise<{ category: s
   });
 
   return (
+    <>
+    <NextSeo
+  title={`${categoryTitle} Projects – JKUAT Social Robotics Lab`}
+  description={`Explore research projects in the category of ${categoryTitle} at the JKUAT Social Robotics Lab. Discover innovative solutions, students' contributions, and impactful work.`}
+  canonical={`https://www.jkuatsocialroboticslab.com/projects/${category}`}
+  openGraph={{
+    url: `https://www.jkuatsocialroboticslab.com/projects/${category}`,
+    title: `${categoryTitle} Projects – JKUAT Social Robotics Lab`,
+    description: `Explore research projects in the ${categoryTitle} category from JKUAT’s Social Robotics Lab.`,
+    siteName: 'JKUAT Social Robotics Lab',
+    images: [
+      {
+        url: matchedProjects[0]?.coverImage || 'https://www.jkuatsocialroboticslab.com/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: `${categoryTitle} Projects`,
+      },
+    ],
+  }}
+  twitter={{
+    cardType: 'summary_large_image',
+  }}
+/>
     <div className="bg-gray-50">
       <Banner 
         title={`Projects / ${categoryTitle}`}
@@ -199,5 +223,7 @@ export default function CategoryPage({ params }: { params: Promise<{ category: s
         </div>
       </section>
     </div>
+  </>
+
   );
 }

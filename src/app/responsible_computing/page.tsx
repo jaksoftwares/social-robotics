@@ -7,9 +7,34 @@ import Image from "next/image";
 import Link from "next/link";
 import Banner from "@/components/Banner";
 import { AnimatePresence, motion } from "framer-motion";
+import { NextSeo } from "next-seo";
 
 export default function ResponsibleComputingPage() {
   return (
+
+    <>
+      <NextSeo
+        title="Responsible Computing – JKUAT Social Robotics Lab"
+        description="Explore our commitment to responsible computing through innovative projects, student designs, and collaborative events at JKUAT."
+        canonical="https://www.jkuatsocialroboticslab.com/responsible_computing"
+        openGraph={{
+          url: 'https://www.jkuatsocialroboticslab.com/responsible_computing',
+          title: 'Responsible Computing – JKUAT Social Robotics Lab',
+          description:
+            'Explore our commitment to responsible computing through innovative projects, student designs, and collaborative events at JKUAT.',
+          siteName: 'JKUAT Social Robotics Lab',
+          images: [
+            {
+              url: 'https://www.jkuatsocialroboticslab.com/og-image.png',
+              width: 1200,
+              height: 630,
+              alt: 'Responsible Computing Projects',
+            },
+          ],
+        }}
+      />
+
+
     <div className="bg-white">
       <Banner 
         title="Responsible Computing"
@@ -296,5 +321,6 @@ export default function ResponsibleComputingPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

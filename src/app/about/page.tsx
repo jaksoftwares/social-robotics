@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ReadMoreText } from "@/components/ReadMore";
 
 import { useState, useEffect } from 'react';
+import { NextSeo } from "next-seo";
 
 export default function AboutPage() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -24,6 +25,31 @@ export default function AboutPage() {
 
 
   return (
+    <>
+    <NextSeo
+        title="About Us – JKUAT Social Robotics Lab"
+        description="Learn more about the team, responsible computing methodology, and impact of the Social Robotics Lab at JKUAT."
+        canonical="https://www.jkuatsocialroboticslab.com/about"
+        openGraph={{
+          url: "https://www.jkuatsocialroboticslab.com/about",
+          title: "About Us – JKUAT Social Robotics Lab",
+          description:
+            "Explore the team, mission, and methodology of the Social Robotics Lab at JKUAT. Discover how responsible computing is shaping the future.",
+          siteName: "JKUAT Social Robotics Lab",
+          images: [
+            {
+              url: "https://www.jkuatsocialroboticslab.com/og-image.png",
+              width: 1200,
+              height: 630,
+              alt: "JKUAT Social Robotics Lab",
+            },
+          ],
+        }}
+        twitter={{
+          cardType: "summary_large_image",
+          site: "@JKUATRobotics",
+        }}
+      />
     <div className="bg-white text-gray-800 font-lato">
       {/* TEAM SECTION */}
       <section className="py-20 px-4 md:px-8 lg:px-16 xl:px-32">
@@ -180,5 +206,7 @@ export default function AboutPage() {
         </div>
       </section>
     </div>
+     </>
+
   );
 }
