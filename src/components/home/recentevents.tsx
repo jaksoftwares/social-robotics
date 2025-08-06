@@ -2,7 +2,8 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { recentEvents, latestEvents } from '@/constants/events';
+// import { recentEvents, latestEvents } from '@/constants/events';
+import { news } from '@/constants/news';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -13,10 +14,11 @@ type Event = {
   title: string;
   description: string;
   coverImage?: string;
-  location: string;
-  externalLink: string;
+  location?: string;
+  externalLink?: string; 
   dateStarting: string;
   dateEnding?: string;
+  category: string;
 };
 
 const EventCarousel: React.FC<{ title: string; events: Event[]; navId: string }> = ({
@@ -143,11 +145,18 @@ const EventCarousel: React.FC<{ title: string; events: Event[]; navId: string }>
 };
 
 const RecentEvents: React.FC = () => {
-  const events: Event[] = [...recentEvents, ...latestEvents];
+
+const allEvents: Event[] = news
+  .filter((item) => item.category === 'Events')
+  .map((item) => ({
+    ...item,
+    dateStarting: item.dateStarting || item.datePublished, 
+  }));
   const today = new Date();
 
-  const upcomingEvents = events.filter((e) => new Date(e.dateStarting) >= today);
-  const pastEvents = events.filter((e) => new Date(e.dateStarting) < today);
+  // ✅ Separate upcoming and past events
+  const upcomingEvents = allEvents.filter((e) => new Date(e.dateStarting) >= today);
+  const pastEvents = allEvents.filter((e) => new Date(e.dateStarting) < today);
 
   return (
     <section className="py-20 px-8 bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden relative">

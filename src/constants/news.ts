@@ -3,11 +3,14 @@ export type NewsItem = {
   title: string;
   slug: string;
   category: string;
-  description: string; 
+  description: string;
   coverImage: string;
   externalLink?: string;
-  datePublished: string; 
+  datePublished: string;
   isFeatured: boolean;
+  dateStarting?: string;
+  dateEnding?: string;
+  location?: string;
 };
 
 export const news: NewsItem[] = [
