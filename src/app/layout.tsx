@@ -3,12 +3,17 @@
 import './globals.css';
 import '@/styles/globals.css';
 import 'animate.css';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
+
+// ✅ NEW: Define themeColor here
+export const viewport: Viewport = {
+  themeColor: '#0077B6',
+};
 
 export const metadata: Metadata = {
   title: 'Social Robotics Lab – JKUAT',
@@ -55,7 +60,7 @@ export const metadata: Metadata = {
     site: '@JKUATRobotics',
     creator: '@JKUATRobotics',
   },
-  themeColor: '#0077B6',
+  // ❌ Remove themeColor from here
   icons: {
     icon: '/favicon.ico',
   },
@@ -67,6 +72,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* Optional: You can remove this if it's in `viewport` already */}
         <meta name="theme-color" content="#0077B6" />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Dr. Eunice Njeri" />
