@@ -7,9 +7,12 @@ export async function generateStaticParams() {
   return blogs.map((blog) => ({ slug: blog.slug }));
 }
 
-export default async function BlogDetailsPage({ params }: { params: { slug: string } }) {
-  // ✅ Wait for params if needed (for futureproofing / SSR environments)
-  const { slug } = await Promise.resolve(params); // This makes TypeScript happy
+export default async function BlogDetailsPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const { slug } = params;
 
   const blog = blogs.find((b) => b.slug === slug);
 
