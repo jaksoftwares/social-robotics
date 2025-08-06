@@ -3,19 +3,14 @@ import { blogs } from "../blogData";
 import Link from "next/link";
 import Image from "next/image";
 
-
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
-
-export function generateStaticParams(): Array<{ slug: string }> {
+export async function generateStaticParams() {
   return blogs.map((blog) => ({ slug: blog.slug }));
 }
 
-export default async function BlogDetailsPage({ params }: PageProps) {
-  const { slug } = params;
+export default async function BlogDetailsPage({ params }: { params: { slug: string } }) {
+  // ✅ Wait for params if needed (for futureproofing / SSR environments)
+  const { slug } = await Promise.resolve(params); // This makes TypeScript happy
+
   const blog = blogs.find((b) => b.slug === slug);
 
   if (!blog) return notFound();
@@ -25,17 +20,11 @@ export default async function BlogDetailsPage({ params }: PageProps) {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
         {/* Back Link */}
         <div className="mb-8">
-          <Link 
-            href="/blogs" 
+          <Link
+            href="/blogs"
             className="inline-flex items-center text-custom-lintingGreenDark hover:text-custom-lintingGreenDark/80 transition-colors"
           >
-            <svg
-              className="w-5 h-5 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -90,35 +79,25 @@ export default async function BlogDetailsPage({ params }: PageProps) {
         <article className="prose prose-lg max-w-none text-gray-700">
           {blog.content.map((paragraph, index) => (
             <div key={index} className="mb-6 last:mb-0">
-              <p className="text-gray-600 leading-relaxed">
-                {paragraph}
-              </p>
+              <p className="text-gray-600 leading-relaxed">{paragraph}</p>
             </div>
           ))}
         </article>
 
-        {/* Related Content or Footer */}
+        {/* Related Content */}
         <div className="mt-16 pt-8 border-t border-gray-200">
-          <h3 className="text-xl font-raleway font-bold text-gray-900 mb-6">
-            Continue Reading
-          </h3>
+          <h3 className="text-xl font-raleway font-bold text-gray-900 mb-6">Continue Reading</h3>
           <div className="grid md:grid-cols-2 gap-6">
             {blogs
-              .filter(b => b.slug !== blog.slug)
+              .filter((b) => b.slug !== blog.slug)
               .slice(0, 2)
-              .map(relatedBlog => (
-                <Link 
-                  key={relatedBlog.slug} 
-                  href={`/blogs/${relatedBlog.slug}`}
-                  className="group"
-                >
+              .map((relatedBlog) => (
+                <Link key={relatedBlog.slug} href={`/blogs/${relatedBlog.slug}`} className="group">
                   <div className="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow">
                     <h4 className="text-lg font-medium text-gray-900 group-hover:text-custom-lintingGreenDark transition-colors mb-2">
                       {relatedBlog.title}
                     </h4>
-                    <p className="text-sm text-gray-500 line-clamp-2">
-                      {relatedBlog.summary}
-                    </p>
+                    <p className="text-sm text-gray-500 line-clamp-2">{relatedBlog.summary}</p>
                   </div>
                 </Link>
               ))}
@@ -131,7 +110,8 @@ export default async function BlogDetailsPage({ params }: PageProps) {
             Interested in learning more?
           </h3>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            For research collaborations, media inquiries, or questions about our work, reach out to our team.
+            For research collaborations, media inquiries, or questions about our work, reach out to
+            our team.
           </p>
           <Link
             href="/contact"
@@ -143,7 +123,6 @@ export default async function BlogDetailsPage({ params }: PageProps) {
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 strokeLinecap="round"
