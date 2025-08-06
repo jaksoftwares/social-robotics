@@ -3,15 +3,19 @@ import { blogs } from "../blogData";
 import Link from "next/link";
 import Image from "next/image";
 
+// ✅ This fixes the type issue during Vercel build
+interface PageProps {
+  params: {
+    slug: string;
+  };
+}
+
 export async function generateStaticParams() {
   return blogs.map((blog) => ({ slug: blog.slug }));
 }
 
-export default async function BlogDetailsPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+// ✅ Clean and correct typing
+export default async function BlogDetailsPage({ params }: PageProps) {
   const { slug } = params;
 
   const blog = blogs.find((b) => b.slug === slug);
