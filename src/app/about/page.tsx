@@ -5,8 +5,7 @@ import Link from "next/link";
 import { ReadMoreText } from "@/components/ReadMore";
 
 import { useState, useEffect } from 'react';
-import { NextSeo } from "next-seo";
-
+import Seo from "@/components/Seo";
 export default function AboutPage() {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
@@ -26,7 +25,7 @@ export default function AboutPage() {
 
   return (
     <>
-    <NextSeo
+    <Seo
         title="About Us – JKUAT Social Robotics Lab"
         description="Learn more about the team, responsible computing methodology, and impact of the Social Robotics Lab at JKUAT."
         canonical="https://www.jkuatsocialroboticslab.com/about"
