@@ -5,7 +5,9 @@ import Link from "next/link";
 import { ReadMoreText } from "@/components/ReadMore";
 
 import { useState, useEffect } from 'react';
-import Seo from "@/components/Seo";
+import dynamic from 'next/dynamic';
+
+const Seo = dynamic(() => import('@/components/Seo'), { ssr: false });
 export default function AboutPage() {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
