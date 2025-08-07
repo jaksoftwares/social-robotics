@@ -7,13 +7,13 @@ import Image from "next/image";
 import Link from "next/link";
 import Banner from "@/components/Banner";
 import { AnimatePresence, motion } from "framer-motion";
-import { NextSeo } from "next-seo";
+// import { NextSeo } from "next-seo";
 
 export default function ResponsibleComputingPage() {
   return (
 
     <>
-      <NextSeo
+      {/* <NextSeo
         title="Responsible Computing – JKUAT Social Robotics Lab"
         description="Explore our commitment to responsible computing through innovative projects, student designs, and collaborative events at JKUAT."
         canonical="https://www.jkuatsocialroboticslab.com/responsible_computing"
@@ -32,7 +32,7 @@ export default function ResponsibleComputingPage() {
             },
           ],
         }}
-      />
+      /> */}
 
 
     <div className="bg-white">

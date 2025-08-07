@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Banner from '@/components/Banner';
 import { FaTwitter, FaLinkedin, FaYoutube, FaGithub } from 'react-icons/fa';
-import { NextSeo } from 'next-seo';
+// import { NextSeo } from 'next-seo';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -43,7 +43,7 @@ export default function ContactPage() {
   return (
 
     <>
-    <NextSeo
+    {/* <NextSeo
         title="Contact Us – JKUAT Social Robotics Lab"
         description="Reach out to the Social Robotics Lab at JKUAT for research collaborations, media inquiries, student opportunities, and more."
         canonical="https://www.jkuatsocialroboticslab.com/contact"
@@ -66,7 +66,7 @@ export default function ContactPage() {
           cardType: "summary_large_image",
           site: "@JKUATRobotics",
         }}
-      />
+      /> */}
     <div className="bg-gray-50">
       <Banner
         title="Get In Touch"

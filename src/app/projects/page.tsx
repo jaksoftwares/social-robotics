@@ -6,7 +6,7 @@ import Banner from '@/components/Banner';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { NextSeo } from 'next-seo';
+// import { NextSeo } from 'next-seo';
 
 // Extract unique categories from the project list
 const categories = Array.from(
@@ -39,7 +39,7 @@ export default function ProjectsPage() {
 
   return (
        <>
-     <NextSeo
+     {/* <NextSeo
         title="Projects – JKUAT Social Robotics Lab"
         description="Browse innovative student and faculty-led social robotics research projects at JKUAT, focused on AI, responsible computing, and human-centered design."
         canonical="https://www.jkuatsocialroboticslab.com/projects"
@@ -62,7 +62,7 @@ export default function ProjectsPage() {
           cardType: 'summary_large_image',
           site: '@JKUATRobotics',
         }}
-      />
+      /> */}
 
      
     <div className="bg-gray-50">
