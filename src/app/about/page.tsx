@@ -5,9 +5,9 @@ import Link from "next/link";
 import { ReadMoreText } from "@/components/ReadMore";
 
 import { useState, useEffect } from 'react';
-import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic';
 
-const Seo = dynamic(() => import('@/components/Seo'), { ssr: false });
+// const Seo = dynamic(() => import('@/components/Seo'), { ssr: false });
 export default function AboutPage() {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
@@ -27,7 +27,7 @@ export default function AboutPage() {
 
   return (
     <>
-    <Seo
+    {/* <Seo
         title="About Us – JKUAT Social Robotics Lab"
         description="Learn more about the team, responsible computing methodology, and impact of the Social Robotics Lab at JKUAT."
         canonical="https://www.jkuatsocialroboticslab.com/about"
@@ -50,7 +50,7 @@ export default function AboutPage() {
           cardType: "summary_large_image",
           site: "@JKUATRobotics",
         }}
-      />
+      /> */}
     <div className="bg-white text-gray-800 font-lato">
       {/* TEAM SECTION */}
       <section className="py-20 px-4 md:px-8 lg:px-16 xl:px-32">
